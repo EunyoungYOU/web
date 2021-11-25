@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+               
+        <!-- font -->
+    
+        <style>
+            @font-face {
+                font-family: 'OTWelcomeBA';
+                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeBA.woff2') format('woff2');
+                font-weight: normal;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: 'OTWelcomeRA';
+                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2') format('woff2');
+                font-weight: normal;
+                font-style: normal;
+            }
+            body{
+                background-color: white;
+            }
+            h1{
+                font-family: 'OTWelcomeBA';
+                display: block;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+            h2{
+                font-family: 'OTWelcomeRA';
+                display: block;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+            h3{
+                font-family: 'OTWelcomeRA';
+                display: block;
+
+                padding-top: 15px;
+
+                margin-top: 20px;
+                margin-bottom: 20px;
+                margin-left: 40%;
+                margin-right: 40%;
+
+                text-align: center;
+
+                border: solid black 3px;
+            }
+            img{
+                display: block; 
+                margin-left: auto; 
+                margin-right: auto; 
+                width: 100%; 
+                max-width: 1000px;
+            }
+            a{
+                color: black;
+                text-decoration: none;
+            }
+        </style>
+
+        <title>User APP lOC: 3F</title>
+    </head>
+
+    <body>
+        <h2><p style = 'color:brown;'>승강기 사용 금지</p>비상 대피로를 따라 천천히 이동하세요.</h2>
+        <div> 
+            {% if loc_img %}
+            <img src="{{ url_for('static', filename = loc_img) }}">
+            {% endif %} 
+        </div>
+        <br>
+
+        <h1>현재 사용자 위치: {% if user_loc %} {{user_loc}} {% endif %}</h1>
+        <h1>화재 발생 위치: {% if fire_loc %} {{fire_loc}} {% endif %} </h1> 
+    </body>
+
+</html>
