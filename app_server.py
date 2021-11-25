@@ -137,4 +137,4 @@ def f3_a():
     return render_template('web_3F_A.html', fire_loc = fire_locate, user_loc = user_locate, loc_img = qr_img)
 
 if __name__ == '__main__':
-    app.run(port=9080, threaded=False)
+    app.run(debug= False, host='0.0.0.0',threaded=False)
